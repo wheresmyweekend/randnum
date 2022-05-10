@@ -13,7 +13,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    #build and push
+    #build and push. Checkout action not required as per build-push docs
     - name: build and push
       uses: docker/build-push-action@v3
       with:
@@ -24,10 +24,10 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.18.0
       with:
-        channel-id: 'sa54-test-submission'
+        channel-id: 'sa54-submission'
         payload: |
           {
-            "text": "GitHub Action build result: ${{ job.status }}",
+            "text": "GitHub Action build result: ${{ job.status }} ",
             "blocks": [
               {
                 "type": "section",
