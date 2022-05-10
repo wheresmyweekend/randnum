@@ -25,7 +25,6 @@ jobs:
       uses: slackapi/slack-github-action@v1.18.0
       with:
         channel-id: 'sa54-test-submission'
-    # For posting a rich message using Block Kits
         payload: |
           {
             "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
@@ -34,7 +33,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  "text": "im just testing stuff out"
                 }
               }
             ]
