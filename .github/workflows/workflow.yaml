@@ -24,7 +24,7 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.18.0
   with:
-    # For posting a rich message using Block Kit
+    # For posting a rich message using Block Kits
     payload: |
       {
         "type": "mrkdwn",
