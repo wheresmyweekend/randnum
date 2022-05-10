@@ -28,14 +28,16 @@ jobs:
     # For posting a rich message using Block Kits
         payload: |
           {
-            "type": "mrkdwn",
-            "text": "Name: ${{ secrets.NAME }}\n
-                      Matriculation: ${{ secrets.NUS_MATRIC_NUMBER }}\n
-                      Email: ${{ secrets.NUS_EMAIL }}\n
-                      Repo: ${{ github.repositoryUrl }}\n
-                      Image name: ${{ secrets.DOCKER_IMAGE_NAME }}:${{ github.ref_name }}\n
-                      Image url: ${{ secrets.DOCKER_IMAGE_URL}}"
-            
+            "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                }
+              }
+            ]
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
