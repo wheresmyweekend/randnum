@@ -27,13 +27,13 @@ jobs:
         channel-id: 'sa54-test-submission'
         payload: |
           {
-            "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+            "text": "GitHub Action build result: ${{ job.status }}",
             "blocks": [
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "im just testing stuff out"
+                  "text": "Name: ${{ secrets.NAME }}\nMatriculation: ${{ secrets.NUS_MATRIC_NUMBER }}\nEmail: ${{ secrets.NUS_EMAIL }}\nRepo: ${{ github.repositoryUrl }}\nImage name: e0834739/randnum:${{ github.ref_name }}\nImage url: ${{ secrets.DOCKER_IMAGE_URL}}"
                 }
               }
             ]
