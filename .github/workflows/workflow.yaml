@@ -18,7 +18,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: wheresmyweekend/randnum:${{ github.ref_name }}
+        tags: e0834739/randnum:${{ github.ref_name }}
     #notify
     - name: Send custom JSON data to Slack workflow
       id: slack
