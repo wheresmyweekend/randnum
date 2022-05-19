@@ -3,7 +3,7 @@
 An assignment on CICD involving the creation of a workflow.yaml file to incorporate **Github Actions** that:
 
 1. Automatically creates a Docker image of the project whenever a new version is published and
-2. Sends a notification to a Slack Channel via Webhook 
+2. Sends a notification to a Slack Channel via its Webhook URL
 
 Original randnum project was provided by the lecturer. 
 
